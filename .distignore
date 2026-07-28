@@ -1,12 +1,10 @@
 /.wordpress-org
 /.git
 /.github
-/node_modules
+/tools
 .distignore
 .gitignore
 README.md
 deno.json
 deno.lock
-package.json
-package-lock.json
 *.zip
