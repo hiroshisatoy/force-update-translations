@@ -64,8 +64,8 @@ class Force_Update_Translations {
 	 */
 	public static function default_settings() {
 		return array(
-			'locale_source'       => 'user',
-			'protect_from_packs'  => 1,
+			'locale_source'      => 'user',
+			'protect_from_packs' => 1,
 		);
 	}
 
@@ -227,7 +227,7 @@ class Force_Update_Translations {
 			return true;
 		}
 
-		$key = $this->get_forced_key( $update['type'], $update['slug'], $update['language'] );
+		$key    = $this->get_forced_key( $update['type'], $update['slug'], $update['language'] );
 		$forced = $this->get_forced_translations();
 		return empty( $forced[ $key ] );
 	}
@@ -662,7 +662,7 @@ class Force_Update_Translations {
 
 		$created = 0;
 		foreach ( $mapping as $source => $entries ) {
-			$jed = $this->build_jed_json( $po, $entries, $source );
+			$jed  = $this->build_jed_json( $po, $entries, $source );
 			$file = $destination_dir . '/' . $base_file_name . '-' . md5( $source ) . '.json';
 			$json = wp_json_encode( $jed );
 			if ( false === $json ) {
@@ -678,9 +678,9 @@ class Force_Update_Translations {
 	/**
 	 * Build a Jed 1.x compatible data structure for script translations.
 	 *
-	 * @param PO                 $po      Parsed PO (for headers).
+	 * @param PO                  $po      Parsed PO (for headers).
 	 * @param Translation_Entry[] $entries Entries for one JS source file.
-	 * @param string             $source  Relative JS source path.
+	 * @param string              $source  Relative JS source path.
 	 * @return array
 	 */
 	protected function build_jed_json( $po, $entries, $source ) {

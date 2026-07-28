@@ -8,7 +8,7 @@
 /**
  * Admin settings for Force Update Translations.
  */
-class FUT_Settings extends Force_Update_Translations {
+class Force_Update_Translations_Settings extends Force_Update_Translations {
 
 	/**
 	 * Constructor.
@@ -89,7 +89,7 @@ class FUT_Settings extends Force_Update_Translations {
 			return $output;
 		}
 
-		$output['locale_source'] = ( isset( $input['locale_source'] ) && 'site' === $input['locale_source'] ) ? 'site' : 'user';
+		$output['locale_source']      = ( isset( $input['locale_source'] ) && 'site' === $input['locale_source'] ) ? 'site' : 'user';
 		$output['protect_from_packs'] = empty( $input['protect_from_packs'] ) ? 0 : 1;
 
 		return $output;
@@ -172,8 +172,10 @@ class FUT_Settings extends Force_Update_Translations {
 			$branch = 'stable';
 		}
 
-		$selected = isset( $_POST['fut_plugins'] ) ? (array) wp_unslash( $_POST['fut_plugins'] ) : array();
-		$selected = array_map( 'sanitize_text_field', $selected );
+		$selected = array();
+		if ( isset( $_POST['fut_plugins'] ) ) {
+			$selected = array_map( 'sanitize_text_field', wp_unslash( (array) $_POST['fut_plugins'] ) );
+		}
 
 		$projects = array();
 		foreach ( $selected as $plugin_file ) {
@@ -187,7 +189,7 @@ class FUT_Settings extends Force_Update_Translations {
 				continue;
 			}
 
-			$plugin_data = get_plugin_data( $plugin_path, false );
+			$plugin_data              = get_plugin_data( $plugin_path, false );
 			$projects[ $plugin_file ] = array(
 				'type'        => 'plugin',
 				'branch'      => $branch,
@@ -226,7 +228,7 @@ class FUT_Settings extends Force_Update_Translations {
 
 		check_admin_referer( 'fut_clear_forced', 'fut_clear_forced_nonce' );
 
-		$removed = $this->clear_forced_translations();
+		$removed                        = $this->clear_forced_translations();
 		$this->admin_notices['clear'][] = array(
 			'status'  => 'success',
 			'content' => sprintf(
@@ -416,4 +418,4 @@ class FUT_Settings extends Force_Update_Translations {
 	}
 }
 
-new FUT_Settings();
+new Force_Update_Translations_Settings();

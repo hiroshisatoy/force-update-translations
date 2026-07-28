@@ -1,10 +1,12 @@
 <?php
 /**
- * Theme translation update handler class.
+ * Theme translation update handler.
  *
- * @package update-force-translations
- * @author mayukojpn
- * @license GPL-2.0+
+ * @package Force_Update_Translations
+ */
+
+/**
+ * Theme translation update handler class.
  */
 class Theme_Force_Update_Translations extends Force_Update_Translations {
 	/**

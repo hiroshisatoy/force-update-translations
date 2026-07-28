@@ -1,10 +1,14 @@
 /.wordpress-org
 /.git
 /.github
+/vendor
 /tools
 .distignore
 .gitignore
 README.md
 deno.json
 deno.lock
+composer.json
+composer.lock
+phpcs.xml.dist
 *.zip

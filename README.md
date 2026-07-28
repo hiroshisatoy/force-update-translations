@@ -74,6 +74,9 @@ Yes—JS strings are covered when:
 ## Development
 
 ```bash
+composer install      # Install PHPCS / WPCS
+deno task format      # Auto-fix WordPress Coding Standards issues
+deno task lint        # Lint PHP with WPCS
 deno task readme      # Generate readme.txt from README.md
 deno task plugin-zip  # Build installable plugin ZIP
 ```

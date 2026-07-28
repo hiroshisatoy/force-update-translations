@@ -2,9 +2,11 @@
 /**
  * Force update translations for plugins.
  *
- * @package update-force-translations
- * @author mayukojpn
- * @license GPL-2.0+
+ * @package Force_Update_Translations
+ */
+
+/**
+ * Plugin translation update handler.
  */
 class Plugin_Force_Update_Translations extends Force_Update_Translations {
 	/**
