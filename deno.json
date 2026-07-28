@@ -1,39 +1,15 @@
 {
-	"plugin": {
-		"name": "force-update-translations",
-		"slug": "force-update-translations",
-		"version": "0.6.2",
-		"description": "Apply WordPress.org theme and plugin translations to a site even if translations are not yet approved or language packs have not been released.",
-		"author": {
-			"name": "Mayo Moriyama & Contributors",
-			"url": "https://github.com/mayukojpn/force-update-translations/graphs/contributors"
-		},
-		"license": "GPL-2.0-or-later",
-		"textDomain": "force-update-translations",
-		"licenseUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
-		"zip": "force-update-translations.zip",
-		"files": [
-			"readme.txt",
-			"force-update-translations.php",
-			"inc",
-			"lib"
-		]
-	},
 	"tasks": {
-		"check": "deno fmt --check deno.json tools && deno lint tools",
+		"check": "deno fmt --check deno.json package.json",
 		"build": "deno task plugin-zip",
-		"plugin-zip": "deno run --allow-read --allow-write --allow-env --allow-run=zip tools/plugin_zip.ts"
+		"plugin-zip": "deno x wp-scripts plugin-zip && zip -d force-update-translations.zip force-update-translations/package.json force-update-translations/README.md"
 	},
+	"nodeModulesDir": "auto",
 	"fmt": {
 		"indentWidth": 4,
 		"useTabs": true,
 		"lineWidth": 400,
-		"include": ["deno.json", "tools"],
+		"include": ["deno.json", "package.json"],
 		"exclude": ["node_modules", ".github"]
-	},
-	"lint": {
-		"rules": {
-			"tags": ["recommended"]
-		}
 	}
 }
