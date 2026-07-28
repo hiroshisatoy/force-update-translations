@@ -11,8 +11,8 @@ class Theme_Force_Update_Translations extends Force_Update_Translations {
 	 * Constructor.
 	 */
 	public function __construct() {
-		// Add theme translation option if user Locale is not 'en_US'.
-		if ( get_user_locale() !== 'en_US' ) {
+		// Add theme translation option if target locale is not 'en_US'.
+		if ( $this->get_target_locale() !== 'en_US' ) {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		}
 	}

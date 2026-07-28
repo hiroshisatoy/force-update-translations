@@ -1,7 +1,8 @@
 {
 	"tasks": {
 		"check": "deno fmt --check deno.json package.json",
-		"build": "deno task plugin-zip",
+		"readme": "deno run --allow-read --allow-write --allow-env @pixelium/wp-readme",
+		"build": "deno task readme && deno task plugin-zip",
 		"plugin-zip": "deno x wp-scripts plugin-zip && zip -d force-update-translations.zip force-update-translations/package.json force-update-translations/README.md"
 	},
 	"nodeModulesDir": "auto",
@@ -11,5 +12,8 @@
 		"lineWidth": 400,
 		"include": ["deno.json", "package.json"],
 		"exclude": ["node_modules", ".github"]
+	},
+	"imports": {
+		"@pixelium/wp-readme": "jsr:@pixelium/wp-readme@^2.0.5"
 	}
 }
