@@ -51,10 +51,6 @@ class Force_Update_Translations {
 		include_once __DIR__ . '/inc/themes.php';
 		include_once __DIR__ . '/inc/settings.php';
 
-		if ( defined( 'WP_CLI' ) && WP_CLI ) {
-			include_once __DIR__ . '/inc/cli.php';
-		}
-
 		add_filter( 'site_transient_update_plugins', array( $this, 'filter_translation_updates' ) );
 		add_filter( 'site_transient_update_themes', array( $this, 'filter_translation_updates' ) );
 		add_filter( 'site_transient_update_core', array( $this, 'filter_translation_updates' ) );

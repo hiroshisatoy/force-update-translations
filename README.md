@@ -64,16 +64,6 @@ Visit **Settings → Force Update Translations** to:
 - Bulk-update translations for installed WordPress.org plugins
 
 <!-- only:github/ -->
-## WP-CLI
-
-```bash
-wp fut update plugin <slug> --branch=stable
-wp fut update plugin <slug> --branch=dev
-wp fut update theme <stylesheet>
-wp fut list-forced
-wp fut clear-forced [--type=plugin] [--slug=akismet]
-```
-
 ## JavaScript translations
 
 Yes—JS strings are covered when:
@@ -110,7 +100,6 @@ To read the changelog for the latest plugin release, please navigate to the <a h
 * Feature: Settings screen for locale source (user vs site language)
 * Feature: Protect forced translations from being overwritten by official language packs
 * Feature: Bulk update for installed WordPress.org plugins
-* Feature: WP-CLI commands (`wp fut update`, `list-forced`, `clear-forced`)
 * Docs: Document Stable/Dev selection, JS JSON generation, and overwrite protection
 * Docs: Generate `readme.txt` from `README.md` via wp-readme
 
