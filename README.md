@@ -4,7 +4,7 @@ Tags: translation
 Requires at least: 4.7
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 0.6.4
+Stable tag: 0.6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,13 @@ To read the changelog for the latest plugin release, please navigate to the <a h
 </only:wp -->
 
 <!-- only:github/ -->
+### 0.6.5 - 2026-07-28
+
+* Remove WP-CLI commands
+* Build plugin ZIP with Deno instead of `@wordpress/scripts`
+* Add Composer + WordPress Coding Standards (`deno task format` / `deno task lint`)
+* Remove WordPress.org SVN deploy workflows (GitHub Releases only)
+
 ### 0.6.4 - 2026-07-28
 
 * Feature: Settings screen for locale source (user vs site language)

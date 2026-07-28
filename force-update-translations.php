@@ -4,7 +4,7 @@
  * Description: Apply WordPress.org theme and plugin translations to a site even if translations are not yet approved or language packs have not been released.
  * Author:      Mayo Moriyama & Contributors
  * Author URI:  https://github.com/mayukojpn/force-update-translations/graphs/contributors
- * Version:     0.6.4
+ * Version:     0.6.5
  * Requires at least: 4.7
  * Requires PHP: 5.6
  * Text Domain: force-update-translations
@@ -725,7 +725,7 @@ class Force_Update_Translations {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		$data = get_plugin_data( __FILE__, false, false );
-		return isset( $data['Version'] ) ? $data['Version'] : '0.6.4';
+		return isset( $data['Version'] ) ? $data['Version'] : '0.6.5';
 	}
 
 	/**
